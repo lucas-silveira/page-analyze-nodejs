@@ -1,0 +1,23 @@
+{
+  "name": "page-analyse",
+  "version": "1.0.0",
+  "description": "Ferramenta que analisa o grau de otimização de uma landing page e retorna uma nota",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucas-silveira/page-analyse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucas-silveira/page-analyse/issues"
+  },
+  "homepage": "https://github.com/lucas-silveira/page-analyse#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
