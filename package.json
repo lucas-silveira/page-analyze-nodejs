@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/lucas-silveira/page-analyse#readme",
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "@google-cloud/vision": "^1.1.3",
+    "cheerio": "^1.0.0-rc.3",
+    "html-entities": "^1.2.1",
+    "pageres": "^5.1.0",
+    "readline-sync": "^1.4.10",
+    "webscrape": "^2.0.0"
   }
 }

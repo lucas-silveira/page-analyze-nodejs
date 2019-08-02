@@ -1,23 +1,15 @@
-const readline = require('readline-sync')
 const robots = {
-    'text': require('./robots/text.js')
+    input: require('./robots/input.js'),
+    text: require('./robots/text.js')
 }
 
-function start() {
-    const content = {}
+async function start() {
+    const webpage = {}
 
-    content.url = askAndReturnUrl()
-    content.product = askAndReturnProductName()
+    robots.input(webpage)
+    await robots.text(webpage)
 
-    function askAndReturnUrl() {
-        return readline.question('Type url of the page: ')
-    }
-
-    function askAndReturnProductName() {
-        return readline.question('Type product name: ')
-    }
-
-    console.log(content)
+    console.log(webpage)
 }
 
 start()
