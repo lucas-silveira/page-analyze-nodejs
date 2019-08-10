@@ -1,16 +1,16 @@
 const readline = require('readline-sync')
 
-function robot(content) {
+function robot(webpage) {
 
-    content.url = askAndReturnUrl()
-    content.product = askAndReturnProductName()
+    webpage.url = askAndReturnUrl()
+    webpage.keyword = askAndReturnKeyword()
 
     function askAndReturnUrl() {
         return readline.question('Type url of the page: ')
     }
 
-    function askAndReturnProductName() {
-        return readline.question('Type product name: ')
+    function askAndReturnKeyword() {
+        return readline.question('Type a keyword: ')
     }
 }
 
