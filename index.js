@@ -1,17 +1,18 @@
 const robots = {
-    input: require('./robots/input.js'),
     screenshot: require('./robots/screenshot.js'),
     html: require('./robots/html-analyze.js')
 }
 
-async function start() {
-    const webpage = {}
+async function start(url, keyword) {
+    const webpage = {
+        url: url,
+        keyword: keyword
+    }
 
-    robots.input(webpage)
-    await robots.screenshot(webpage)
+    // await robots.screenshot(webpage)
     await robots.html(webpage)
 
-    console.log(webpage)
+    return webpage
 }
 
-start()
+module.exports = start

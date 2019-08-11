@@ -11,7 +11,7 @@ async function robot(webpage) {
             .dest('./webpage/')
             .run()
     
-            webpage.screenshotUrl = `./webpage/${webpage.keyword}.jpg`
+            webpage.screenshotUrl = `/api/content/${webpage.keyword}.jpg`
         } catch(err) {
             throw new Error(`Não foi possível capturar o screenshot da página. Motivo: ${err}`)
         }
