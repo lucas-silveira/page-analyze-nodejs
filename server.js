@@ -3,6 +3,7 @@ const cors = require('cors')
 const routes = require('./src/routes.js')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 app.use(express.json())
 app.use(cors())
@@ -10,4 +11,4 @@ app.use(cors())
 
 app.use('/api', routes)
 
-app.listen(3000)
+app.listen(port)
