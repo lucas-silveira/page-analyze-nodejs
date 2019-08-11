@@ -12,7 +12,7 @@ async function start(url, keyword) {
     // await robots.screenshot(webpage)
     await robots.html(webpage)
 
-    return webpage
+    return JSON.stringify(webpage)
 }
 
 module.exports = start
