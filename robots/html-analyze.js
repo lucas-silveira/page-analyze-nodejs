@@ -185,7 +185,7 @@ async function robot(webpage) {
 
         const totalRate = (total/4) * 10
 
-        webpage.totalRate = totalRate
+        webpage.params.totalRate = totalRate
     }
 
 }
