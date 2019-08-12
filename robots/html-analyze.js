@@ -70,7 +70,7 @@ async function robot(webpage) {
             $('img').each( function() {
                 const currentAltTag = $(this).attr('alt')
                 if (currentAltTag)
-                    currentAltTag.toLowerCase().indexOf( keywordInLowerCase ) ? i++ : false
+                    currentAltTag.toLowerCase().indexOf( keywordInLowerCase ) > -1 ? i++ : false
             })
 
             webpage.params.images.altHasKeyword = i
@@ -121,7 +121,7 @@ async function robot(webpage) {
             const keywordInLowerCase = webpage.keyword.toLowerCase()
             const textInLowerCase = webpage.sanitizedContent.toLowerCase()
             const keywords = textInLowerCase.split(keywordInLowerCase)
-            webpage.params.text.keywordLength = keywords.length
+            webpage.params.text.keywordLength = keywords.length - 1
         }
 
         function calculeRate(webpage) {
