@@ -80,7 +80,7 @@ async function robot(webpage) {
             let rate = 0
             const imagesLength = webpage.params.images.length
             const keywords = webpage.params.images.altHasKeyword
-            if (keywords > imagesLength*0.7)
+            if (keywords > imagesLength*0.5)
                 rate = 1
             webpage.params.images.rate = rate
         }
