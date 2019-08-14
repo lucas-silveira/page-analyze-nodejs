@@ -1,13 +1,17 @@
 const { google } = require('googleapis')
 const customSearch = google.customsearch('v1')
-const googleSearchCredentials = require('../credentials/google-search.json')
+const googleSearchCredentials = {
+    apiKey: process.env.GOOGLE_API_KEY,
+    searchEngineId: process.env.GOOGLE_SEARCH_ENGINE_ID
+}
 
 async function robot(webpage) {
+    
     await getGoogleSearchPosition(webpage)
 
     async function getGoogleSearchPosition(webpage) {
         const query = webpage.keyword
-        webpage.searchPosition = await fetchGoogleAndReturnPosition(query, webpage)
+        webpage.searchRankPosition = await fetchGoogleAndReturnPosition(query, webpage)
     }
 
     async function fetchGoogleAndReturnPosition(query, webpage) {
