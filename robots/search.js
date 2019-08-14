@@ -1,5 +1,5 @@
 const SerpWow = require('google-search-results-serpwow')
-const serpwow = new SerpWow('BDC08D9390754BD0B1C64C3D54E6C9EB')
+const serpwow = new SerpWow(process.env.SERPWOW_API_KEY)
 
 async function robot(webpage) {
 
