@@ -27,7 +27,7 @@ async function robot(webpage) {
             return item.link.indexOf(webpage.sanitizedUrl) > -1
         })
 
-        return pageTargetPosition
+        return pageTargetPosition > -1 ? pageTargetPosition + 1 : 'N/A'
     }
 }
 
