@@ -1,9 +1,5 @@
-const { google } = require('googleapis')
-const customSearch = google.customsearch('v1')
-const googleSearchCredentials = {
-    apiKey: process.env.GOOGLE_API_KEY,
-    searchEngineId: process.env.GOOGLE_SEARCH_ENGINE_ID
-}
+const SerpWow = require('google-search-results-serpwow')
+const serpwow = new SerpWow('BDC08D9390754BD0B1C64C3D54E6C9EB')
 
 async function robot(webpage) {
 
@@ -15,19 +11,20 @@ async function robot(webpage) {
     }
 
     async function fetchGoogleAndReturnPosition(query, webpage) {
-        const response = await customSearch.cse.list({
-            auth: googleSearchCredentials.apiKey,
-            cx: googleSearchCredentials.searchEngineId,
+        const response = await serpwow.json({
             q: query,
             gl: 'br',
-            lr: 'lang_pt'
+            hl: 'pt',
+            location: 'Campinas,State of Sao Paulo,Brazil',
+            google_domain: 'google.com.br',
+            num: 100
         })
-
-        const pageTargetPosition = response.data.items.findIndex( item => {
+        const pageTargetPosition = response.organic_results.filter( item => {
             return item.link.indexOf(webpage.sanitizedUrl) > -1
         })
+        const position = pageTargetPosition[0].position
 
-        return pageTargetPosition > -1 ? pageTargetPosition + 1 : 'N/A'
+        return position > 0 ? position : 'N/A'
     }
 }
 

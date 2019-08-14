@@ -23,6 +23,7 @@
     "cheerio": "^1.0.0-rc.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "google-search-results-serpwow": "0.0.8",
     "googleapis": "^42.0.0",
     "html-entities": "^1.2.1",
     "pageres": "^5.1.0",
