@@ -7,7 +7,7 @@ async function robot(webpage) {
 
     async function getGoogleSearchPosition(webpage) {
         const query = webpage.keyword
-        webpage.searchRankPosition = await fetchGoogleAndReturnPosition(query, webpage)
+        webpage.searchPosition = await fetchGoogleAndReturnPosition(query, webpage)
     }
 
     async function fetchGoogleAndReturnPosition(query, webpage) {
