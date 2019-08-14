@@ -1,17 +1,7 @@
-const readline = require('readline-sync')
-
 function robot(webpage) {
-
-    webpage.url = askAndReturnUrl()
-    webpage.keyword = askAndReturnKeyword()
-
-    function askAndReturnUrl() {
-        return readline.question('Type url of the page: ')
-    }
-
-    function askAndReturnKeyword() {
-        return readline.question('Type a keyword: ')
-    }
+    const urlSanitized = webpage.url.replace(/https?:\/\//, '')
+    
+    webpage.url = `http://${urlSanitized}`
 }
 
 module.exports = robot

@@ -1,16 +1,15 @@
 const robots = {
-    screenshot: require('./robots/screenshot.js'),
-    html: require('./robots/html-analyze.js')
+    input: require('./robots/input'),
+    screenshot: require('./robots/screenshot'),
+    html: require('./robots/html-analyze')
 }
 
 async function start(url, keyword) {
-    const webpage = {
-        url: url,
-        keyword: keyword
-    }
+    const webpage = { url, keyword }
 
-    // await robots.screenshot(webpage)
+    robots.input(webpage)
     await robots.html(webpage)
+    // await robots.screenshot(webpage)
 
     return webpage
 }
