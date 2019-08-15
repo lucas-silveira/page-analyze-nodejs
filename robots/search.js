@@ -29,7 +29,7 @@ async function robot(webpage) {
     }
 
     function calculeTotalRate(webpage) {
-        const totalRate = webpage.params.totalRate
+        let totalRate = webpage.params.totalRate
 
         if (typeof webpage.pageSearchRank === 'number' && webpage.pageSearchRank < 11)
             totalRate = 9 + totalRate/10
