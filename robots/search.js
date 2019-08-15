@@ -4,6 +4,7 @@ const serpwow = new SerpWow(process.env.SERPWOW_API_KEY)
 async function robot(webpage) {
 
     await getGoogleSearchPosition(webpage)
+    calculeTotalRate(webpage)
 
     async function getGoogleSearchPosition(webpage) {
         const query = webpage.keyword
@@ -25,6 +26,15 @@ async function robot(webpage) {
         const position = pageTargetPosition[0].position
 
         return position > 0 ? position : 'N/A'
+    }
+
+    function calculeTotalRate(webpage) {
+        const totalRate = webpage.params.totalRate
+
+        if (typeof webpage.pageSearchRank === 'number' && webpage.pageSearchRank < 11)
+            totalRate = 9 + totalRate/10
+        
+        webpage.params.totalRate = totalRate
     }
 }
 
