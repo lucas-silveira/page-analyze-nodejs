@@ -1,7 +1,7 @@
 function robot(webpage) {
     const sanitizedUrl = webpage.url.replace(/https?:\/\//, '')
     
-    webpage.sanitizedUrl = sanitizedUrl
+    webpage.sanitizedUrl = sanitizedUrl.trim()
     webpage.url = `http://${sanitizedUrl}`
 }
 
